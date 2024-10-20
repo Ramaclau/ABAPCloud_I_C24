@@ -431,12 +431,101 @@ CLASS zcl_cp05_oper IMPLEMENTATION.
     lv_replace = replace( val = lv_replace with = '#' off = 5 len = 3 ).
     out->write( lv_replace ).
 
-
-DATA(lv_rut) = '10813754-1'.
+***************************************************************************
+    DATA(lv_rut) = '10813754-1'.
     SPLIT lv_rut AT '-' INTO DATA(lv_e1)
-                                DATA(lv_d2).
+                             DATA(lv_d2).
     out->write( lv_e1 ).
     out->write( lv_d2 ).
+***************************************************************************
+
+*Operadores de comparación
+    DATA: lv_match TYPE abap_bool,
+          lv_text  TYPE string VALUE 'This is an example text for SAP_ABAP programming'.
+
+    IF lv_text CP '*SAP#_*'.
+      lv_match = abap_true.
+      out->write( 'Contiene el patrol SAP_' ).
+    ELSE.
+      lv_match = abap_false.
+      out->write( 'NO contiene el patrol SAP_' ).
+    ENDIF.
+
+    IF lv_text NP '*g+'.
+      lv_match = abap_true.
+      out->write( 'No Contiene "g"' ).
+    ELSE.
+      lv_match = abap_false.
+      out->write( 'SI contiene "g"' ).
+    ENDIF.
+
+*PCRE Regex
+    DATA(lv_pcre) = '_.....'.
+    DATA(lv_mail)  = 'alumno@logali.com'.
+
+    FIND PCRE lv_pcre IN lv_mail.
+
+    IF sy-subrc = 0.
+      out->write( 'OK' ).
+    ELSE.
+      out->write( 'NO OK' ).
+    ENDIF.
+
+    DATA(lv_text_pcre) = '123A?Z1!!!!00004###~$""AA'.
+    REPLACE ALL OCCURRENCES OF PCRE '[^A-Za-z0-9]+' IN lv_text_pcre WITH | |.
+    out->write( lv_text_pcre ).
+
+*Expresiones regulares
+    DATA(lv_text_er)  = 'ABAPppp Xpp1 SAppP'.
+    DATA lv_text_er2 TYPE string.
+
+    lv_text_er2 = replace( val =  lv_text_er pcre = 'p{2,4}' with = '*' occ = 0 ).
+    out->write( lv_text_er2 ).
+
+    lv_text_er2 = replace( val =  lv_text_er pcre = '[^SAP]' with = '*' occ = 0 ).
+    out->write( lv_text_er2 ).
+
+    lv_text_er2 = replace( val =  lv_text_er pcre = '\s' with = '//' ).
+    out->write( lv_text_er2 ).
+
+    REPLACE ALL OCCURRENCES OF PCRE '\s' IN lv_text_er WITH '?'.
+    out->write( lv_text_er ).
+
+*Repetición de strings
+    DATA(lv_text_re) = repeat( val = 'Logali' occ = 4 ).
+    out->write( lv_text_re ).
+
+    DATA(lv_text_re2) = | abap { repeat( val = ` ` occ = 10 ) } abap |.
+    out->write( lv_text_re2 ).
+
+    TRY.
+        DATA(lv_text_re3) = | abap { repeat( val = ` ` occ = -10 ) } abap |.
+      CATCH cx_sy_strg_par_val.
+        out->write( 'negativo no valido' ).
+    ENDTRY.
+
+*Función ESCAPE
+    "URL
+    DATA(lv_url) = escape( val = 'Logali ABAP Academy @300' format = cl_abap_format=>e_url_full ).
+    out->write( lv_url ).
+
+    "JSON
+    DATA(lv_json) = escape( val = 'Logali "ABAP" test json \ Academy @300' format = cl_abap_format=>e_json_string ).
+    out->write( lv_json ).
+
+    "STRING TEMPLATE
+    DATA(lv_str_tmp) = escape( val = 'Special characters in string template |, \, {, }' format = cl_abap_format=>e_string_tpl ).
+    out->write( lv_str_tmp ).
+
+
+
+
+
+
+
+
+
+
 
   ENDMETHOD.
 ENDCLASS.
