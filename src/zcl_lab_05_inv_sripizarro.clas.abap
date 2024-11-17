@@ -10,7 +10,10 @@ CLASS zcl_lab_05_inv_sripizarro DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_lab_05_inv_sripizarro IMPLEMENTATION.
+
+
+CLASS ZCL_LAB_05_INV_SRIPIZARRO IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 

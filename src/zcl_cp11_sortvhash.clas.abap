@@ -26,19 +26,8 @@ ENDCLASS.
 
 
 
-CLASS zcl_cp11_sortvhash IMPLEMENTATION.
+CLASS ZCL_CP11_SORTVHASH IMPLEMENTATION.
 
-  METHOD hash.
-    DATA(lv_result) = lt_hash[ travel_id    = me->key_travel_id
-                               booking_id   = me->key_booking_id
-                               booking_date = me->key_date ].
-  ENDMETHOD.
-
-  METHOD sort.
-    DATA(lv_result) = lt_sort[ travel_id    = me->key_travel_id
-                               booking_id   = me->key_booking_id
-                               booking_date = me->key_date ].
-  ENDMETHOD.
 
   METHOD constructor.
 
@@ -58,18 +47,13 @@ CLASS zcl_cp11_sortvhash IMPLEMENTATION.
 
   ENDMETHOD.
 
-  METHOD standar.
-    DATA(lv_result) = lt_standar[ travel_id    = me->key_travel_id
-                                  booking_id   = me->key_booking_id
-                                  booking_date = me->key_date ].
+
+  METHOD hash.
+    DATA(lv_result) = lt_hash[ travel_id    = me->key_travel_id
+                               booking_id   = me->key_booking_id
+                               booking_date = me->key_date ].
   ENDMETHOD.
 
-  METHOD set_line_to_read.
-    DATA(lv_data) = lt_standar[ conv i( lines( lt_standar ) * '0.65' ) ].
-    me->key_travel_id  = lv_data-travel_id.
-    me->key_booking_id = lv_data-booking_id.
-    me->key_date       = lv_data-booking_date.
-  ENDMETHOD.
 
   METHOD if_oo_adt_classrun~main.
 
@@ -87,4 +71,25 @@ CLASS zcl_cp11_sortvhash IMPLEMENTATION.
 
   ENDMETHOD.
 
+
+  METHOD set_line_to_read.
+    DATA(lv_data) = lt_standar[ conv i( lines( lt_standar ) * '0.65' ) ].
+    me->key_travel_id  = lv_data-travel_id.
+    me->key_booking_id = lv_data-booking_id.
+    me->key_date       = lv_data-booking_date.
+  ENDMETHOD.
+
+
+  METHOD sort.
+    DATA(lv_result) = lt_sort[ travel_id    = me->key_travel_id
+                               booking_id   = me->key_booking_id
+                               booking_date = me->key_date ].
+  ENDMETHOD.
+
+
+  METHOD standar.
+    DATA(lv_result) = lt_standar[ travel_id    = me->key_travel_id
+                                  booking_id   = me->key_booking_id
+                                  booking_date = me->key_date ].
+  ENDMETHOD.
 ENDCLASS.

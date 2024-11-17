@@ -15,7 +15,10 @@ CLASS zcl_cp11_fsvssst DEFINITION
 
 ENDCLASS.
 
-CLASS zcl_cp11_fsvssst IMPLEMENTATION.
+
+
+CLASS ZCL_CP11_FSVSSST IMPLEMENTATION.
+
 
   METHOD field_symbol.
 
@@ -26,34 +29,6 @@ CLASS zcl_cp11_fsvssst IMPLEMENTATION.
         INTO TABLE @lt_flights.
 
     loop_fs( CHANGING c_flights = lt_flights ).
-
-  ENDMETHOD.
-
-  METHOD structure.
-
-    DATA lt_flights TYPE lty_flights.
-
-    SELECT FROM /dmo/airport
-        FIELDS *
-        INTO TABLE @lt_flights.
-
-    loop_st( CHANGING c_flights = lt_flights ).
-
-  ENDMETHOD.
-
-  METHOD loop_fs.
-
-    LOOP AT c_flights ASSIGNING FIELD-SYMBOL(<lfs_flights>).
-      <lfs_flights>-country = 'CO'.
-    ENDLOOP.
-  ENDMETHOD.
-
-  METHOD loop_st.
-
-    LOOP AT c_flights INTO DATA(ls_flights).
-      ls_flights-country = 'CO'.
-      MODIFY c_flights FROM ls_flights.
-    ENDLOOP.
 
   ENDMETHOD.
 
@@ -68,6 +43,37 @@ CLASS zcl_cp11_fsvssst IMPLEMENTATION.
 
     out->get( 'OK' ).
 
+
+  ENDMETHOD.
+
+
+  METHOD loop_fs.
+
+    LOOP AT c_flights ASSIGNING FIELD-SYMBOL(<lfs_flights>).
+      <lfs_flights>-country = 'CO'.
+    ENDLOOP.
+  ENDMETHOD.
+
+
+  METHOD loop_st.
+
+    LOOP AT c_flights INTO DATA(ls_flights).
+      ls_flights-country = 'CO'.
+      MODIFY c_flights FROM ls_flights.
+    ENDLOOP.
+
+  ENDMETHOD.
+
+
+  METHOD structure.
+
+    DATA lt_flights TYPE lty_flights.
+
+    SELECT FROM /dmo/airport
+        FIELDS *
+        INTO TABLE @lt_flights.
+
+    loop_st( CHANGING c_flights = lt_flights ).
 
   ENDMETHOD.
 ENDCLASS.

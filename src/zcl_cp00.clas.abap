@@ -10,12 +10,14 @@ CLASS zcl_cp00 DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_cp00 IMPLEMENTATION.
+
+
+CLASS ZCL_CP00 IMPLEMENTATION.
+
 
 METHOD if_oo_adt_classrun~main.
 
 out->write( 'esta es una clase' ).
 
 ENDMETHOD.
-
 ENDCLASS.

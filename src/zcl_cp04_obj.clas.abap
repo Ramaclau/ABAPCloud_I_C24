@@ -9,7 +9,11 @@ CLASS zcl_cp04_obj DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_cp04_obj IMPLEMENTATION.
+
+
+CLASS ZCL_CP04_OBJ IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
     DATA: lv_num1 TYPE i VALUE 10,
           lv_num2 TYPE i,

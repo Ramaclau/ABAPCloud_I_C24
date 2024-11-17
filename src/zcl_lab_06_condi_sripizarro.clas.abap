@@ -11,7 +11,10 @@ CLASS zcl_lab_06_condi_sripizarro DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_lab_06_condi_sripizarro IMPLEMENTATION.
+
+
+CLASS ZCL_LAB_06_CONDI_SRIPIZARRO IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 
@@ -119,5 +122,4 @@ CLASS zcl_lab_06_condi_sripizarro IMPLEMENTATION.
     ENDDO.
 
   ENDMETHOD.
-
 ENDCLASS.

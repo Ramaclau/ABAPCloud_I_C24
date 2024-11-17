@@ -18,7 +18,10 @@ CLASS zcl_cp11_secondkey DEFINITION
                              WITH NON-UNIQUE SORTED KEY sk_carrier COMPONENTS carrier_id.
 ENDCLASS.
 
-CLASS zcl_cp11_secondkey IMPLEMENTATION.
+
+
+CLASS ZCL_CP11_SECONDKEY IMPLEMENTATION.
+
 
   METHOD constructor.
 
@@ -32,37 +35,6 @@ CLASS zcl_cp11_secondkey IMPLEMENTATION.
 
   ENDMETHOD.
 
-  METHOD read_non_key.
-
-    DATA(ls_flight_without_key) = lt_sort[ flight_date = '20240810' ].
-
-  ENDMETHOD.
-
-  METHOD read_primary.
-
-    DATA(ls_flight) = lt_sort[ travel_id    = '00000003'
-                               booking_id   = '0002'
-                               booking_date = '20240721' ].
-
-  ENDMETHOD.
-
-  METHOD read_secondary_1.
-
-    DATA(ls_scnd_key1) = lt_sort_with_key[ KEY sk_carrier carrier_id = 'AA' ]. " usando 1ra vez clave secundaria
-
-  ENDMETHOD.
-
-  METHOD read_secondary_2.
-
-    DATA(ls_scnd_key2) = lt_sort_with_key[ KEY sk_carrier carrier_id = 'AA' ]. " usando 1ra vez clave secundaria
-
-  ENDMETHOD.
-
-  METHOD read_secondary_3.
-
-    DATA(ls_scnd_key3) = lt_sort_with_key[ KEY sk_carrier carrier_id = 'AA' ]. " usando 1ra vez clave secundaria
-
-  ENDMETHOD.
 
   METHOD if_oo_adt_classrun~main.
 
@@ -79,5 +51,39 @@ CLASS zcl_cp11_secondkey IMPLEMENTATION.
   ENDMETHOD.
 
 
+  METHOD read_non_key.
 
+    DATA(ls_flight_without_key) = lt_sort[ flight_date = '20240810' ].
+
+  ENDMETHOD.
+
+
+  METHOD read_primary.
+
+    DATA(ls_flight) = lt_sort[ travel_id    = '00000003'
+                               booking_id   = '0002'
+                               booking_date = '20240721' ].
+
+  ENDMETHOD.
+
+
+  METHOD read_secondary_1.
+
+    DATA(ls_scnd_key1) = lt_sort_with_key[ KEY sk_carrier carrier_id = 'AA' ]. " usando 1ra vez clave secundaria
+
+  ENDMETHOD.
+
+
+  METHOD read_secondary_2.
+
+    DATA(ls_scnd_key2) = lt_sort_with_key[ KEY sk_carrier carrier_id = 'AA' ]. " usando 1ra vez clave secundaria
+
+  ENDMETHOD.
+
+
+  METHOD read_secondary_3.
+
+    DATA(ls_scnd_key3) = lt_sort_with_key[ KEY sk_carrier carrier_id = 'AA' ]. " usando 1ra vez clave secundaria
+
+  ENDMETHOD.
 ENDCLASS.

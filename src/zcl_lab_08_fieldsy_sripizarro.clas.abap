@@ -9,7 +9,10 @@ CLASS zcl_lab_08_fieldsy_sripizarro DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_lab_08_fieldsy_sripizarro IMPLEMENTATION.
+
+
+CLASS ZCL_LAB_08_FIELDSY_SRIPIZARRO IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 

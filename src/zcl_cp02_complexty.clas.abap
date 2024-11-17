@@ -11,7 +11,10 @@ CLASS zcl_cp02_complexty DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_cp02_complexty IMPLEMENTATION.
+
+
+CLASS ZCL_CP02_COMPLEXTY IMPLEMENTATION.
+
 
 METHOD if_oo_adt_classrun~main.
   TYPES: BEGIN OF lty_emp,

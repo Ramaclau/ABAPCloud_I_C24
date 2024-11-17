@@ -10,7 +10,10 @@ CLASS zcl_lab_04_msg_sripizarro DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_lab_04_msg_sripizarro IMPLEMENTATION.
+
+
+CLASS ZCL_LAB_04_MSG_SRIPIZARRO IMPLEMENTATION.
+
 
 METHOD if_oo_adt_classrun~main.
 

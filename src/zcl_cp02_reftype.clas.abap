@@ -10,7 +10,10 @@ CLASS zcl_cp02_reftype DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_cp02_reftype IMPLEMENTATION.
+
+
+CLASS ZCL_CP02_REFTYPE IMPLEMENTATION.
+
 
  METHOD if_oo_adt_classrun~main.
     DATA: lvr_int    TYPE REF TO i,
@@ -22,5 +25,4 @@ CLASS zcl_cp02_reftype IMPLEMENTATION.
     DATA lo_ref TYPE REF TO zcl_cp00.
 
  ENDMETHOD.
-
 ENDCLASS.

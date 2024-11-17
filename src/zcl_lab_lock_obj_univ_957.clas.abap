@@ -10,7 +10,11 @@ CLASS zcl_lab_lock_obj_univ_957 DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_lab_lock_obj_univ_957 IMPLEMENTATION.
+
+
+CLASS ZCL_LAB_LOCK_OBJ_UNIV_957 IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
 
     out->write( |User has startted the business process| ).
@@ -45,14 +49,14 @@ CLASS zcl_lab_lock_obj_univ_957 IMPLEMENTATION.
     DATA ls_university TYPE zuniversity_957.
 
     ls_university = VALUE #( client       = '100'
-                          soc             = '3700'
-                          exercise        = '1020'
+                          soc             = '1000'
+                          exercise        = '2024'
                           course_price    = '2300'
                           currency        = 'USD'
                           courses         = '123'
                           unit            = '1 '
                           inf-course_code = '700'
-                          inf-first_name  = 'Sofia'
+                          inf-first_name  = 'Ramon'
                           inf-last_name   = 'Perez'
                           inf-student_id  = '957' ).
 
@@ -75,5 +79,4 @@ CLASS zcl_lab_lock_obj_univ_957 IMPLEMENTATION.
 
 
   ENDMETHOD.
-
 ENDCLASS.

@@ -11,7 +11,10 @@ CLASS zcl_cp01_types DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_cp01_types IMPLEMENTATION.
+
+
+CLASS ZCL_CP01_TYPES IMPLEMENTATION.
+
 
 METHOD  if_oo_adt_classrun~main.
   DATA: lv_string TYPE string,
@@ -29,5 +32,4 @@ METHOD  if_oo_adt_classrun~main.
   out->write( lv_car ).
 
 ENDMETHOD.
-
 ENDCLASS.

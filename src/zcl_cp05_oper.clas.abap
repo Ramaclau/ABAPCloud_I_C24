@@ -11,7 +11,11 @@ CLASS zcl_cp05_oper DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_cp05_oper IMPLEMENTATION.
+
+
+CLASS ZCL_CP05_OPER IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
     DATA: lv_num_a TYPE i VALUE 10,
           lv_num_b TYPE i VALUE 15,

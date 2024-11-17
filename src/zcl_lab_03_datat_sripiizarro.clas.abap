@@ -10,7 +10,10 @@ CLASS zcl_lab_03_datat_sripiizarro DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_lab_03_datat_sripiizarro IMPLEMENTATION.
+
+
+CLASS ZCL_LAB_03_DATAT_SRIPIIZARRO IMPLEMENTATION.
+
 
 METHOD if_oo_adt_classrun~main.
 

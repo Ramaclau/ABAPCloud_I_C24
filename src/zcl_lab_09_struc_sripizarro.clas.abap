@@ -9,7 +9,10 @@ CLASS zcl_lab_09_struc_sripizarro DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_lab_09_struc_sripizarro IMPLEMENTATION.
+
+
+CLASS ZCL_LAB_09_STRUC_SRIPIZARRO IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 

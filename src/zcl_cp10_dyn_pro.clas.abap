@@ -10,7 +10,10 @@ CLASS zcl_cp10_dyn_pro DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_cp10_dyn_pro IMPLEMENTATION.
+
+
+CLASS ZCL_CP10_DYN_PRO IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 

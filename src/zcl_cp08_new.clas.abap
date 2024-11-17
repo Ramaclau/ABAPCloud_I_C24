@@ -16,7 +16,10 @@ CLASS zcl_cp08_new DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_cp08_new IMPLEMENTATION.
+
+
+CLASS ZCL_CP08_NEW IMPLEMENTATION.
+
 
   METHOD constructor.
 
@@ -25,10 +28,10 @@ CLASS zcl_cp08_new IMPLEMENTATION.
 
   ENDMETHOD.
 
+
   METHOD if_oo_adt_classrun~main.
 *    out->write( data = lo_data2 name = 'lo_data2' ).
 
 
   ENDMETHOD.
-
 ENDCLASS.

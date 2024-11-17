@@ -10,7 +10,10 @@ CLASS zcl_lab_02_arith_sripizarro DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_lab_02_arith_sripizarro IMPLEMENTATION.
+
+
+CLASS ZCL_LAB_02_ARITH_SRIPIZARRO IMPLEMENTATION.
+
 
 METHOD if_oo_adt_classrun~main.
 *1) SUMA
@@ -67,5 +70,4 @@ LV_SQUARE_ROOT = SQRT( LV_EXPO ).
 
 
 ENDMETHOD.
-
 ENDCLASS.

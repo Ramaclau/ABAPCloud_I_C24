@@ -11,7 +11,11 @@ CLASS zcl_cp11_performance DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_cp11_performance IMPLEMENTATION.
+
+
+CLASS ZCL_CP11_PERFORMANCE IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
 
 *3.1. SORT

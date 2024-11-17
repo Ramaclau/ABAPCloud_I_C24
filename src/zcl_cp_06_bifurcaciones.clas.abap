@@ -11,7 +11,10 @@ CLASS zcl_cp_06_bifurcaciones DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_cp_06_bifurcaciones IMPLEMENTATION.
+
+
+CLASS ZCL_CP_06_BIFURCACIONES IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 

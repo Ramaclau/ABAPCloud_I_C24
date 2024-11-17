@@ -12,7 +12,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_cp05_split IMPLEMENTATION.
+CLASS ZCL_CP05_SPLIT IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
 
 *    DATA(lv_str3) = 'Logali-Group-SAP-Academy'.
@@ -61,5 +63,4 @@ CLASS zcl_cp05_split IMPLEMENTATION.
 
 
   ENDMETHOD.
-
 ENDCLASS.

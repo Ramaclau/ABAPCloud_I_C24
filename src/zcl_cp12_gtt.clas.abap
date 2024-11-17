@@ -10,7 +10,11 @@ CLASS zcl_cp12_gtt DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_cp12_gtt IMPLEMENTATION.
+
+
+CLASS ZCL_CP12_GTT IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
 
 *    data lt_emoloyee TYPE STANDARD TABLE OF zemp_957.

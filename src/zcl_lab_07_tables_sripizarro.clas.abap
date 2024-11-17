@@ -12,7 +12,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_lab_07_tables_sripizarro IMPLEMENTATION.
+CLASS ZCL_LAB_07_TABLES_SRIPIZARRO IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
 
 *1. Añadir registros
@@ -143,5 +145,4 @@ CLASS zcl_lab_07_tables_sripizarro IMPLEMENTATION.
 
 
   ENDMETHOD.
-
 ENDCLASS.

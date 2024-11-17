@@ -11,7 +11,10 @@ CLASS zcl_cp00_ins_zemploy_table DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_cp00_ins_zemploy_table IMPLEMENTATION.
+
+
+CLASS ZCL_CP00_INS_ZEMPLOY_TABLE IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 

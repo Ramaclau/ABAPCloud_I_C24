@@ -9,7 +9,10 @@ CLASS zcl_lab_07_tables_sripiza DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_lab_07_tables_sripiza IMPLEMENTATION.
+
+
+CLASS ZCL_LAB_07_TABLES_SRIPIZA IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 * 1. FOR

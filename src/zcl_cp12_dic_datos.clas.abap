@@ -39,7 +39,10 @@ CLASS zcl_cp12_dic_datos DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_cp12_dic_datos IMPLEMENTATION.
+
+
+CLASS ZCL_CP12_DIC_DATOS IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 

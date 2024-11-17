@@ -11,7 +11,10 @@ CLASS zcl_lab_01_var_sripizarro DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_lab_01_var_sripizarro IMPLEMENTATION.
+
+
+CLASS ZCL_LAB_01_VAR_SRIPIZARRO IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 
@@ -62,5 +65,4 @@ CLASS zcl_lab_01_var_sripizarro IMPLEMENTATION.
 
 
   ENDMETHOD.
-
 ENDCLASS.

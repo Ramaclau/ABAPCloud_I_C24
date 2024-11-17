@@ -12,7 +12,8 @@ ENDCLASS.
 
 
 
-CLASS zcl_insert_univ_957 IMPLEMENTATION.
+CLASS ZCL_INSERT_UNIV_957 IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 

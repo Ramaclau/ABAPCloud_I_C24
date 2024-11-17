@@ -11,7 +11,10 @@ CLASS zcl_lab_05_inv_sripiza DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_lab_05_inv_sripiza IMPLEMENTATION.
+
+
+CLASS ZCL_LAB_05_INV_SRIPIZA IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 
@@ -99,6 +102,4 @@ CLASS zcl_lab_05_inv_sripiza IMPLEMENTATION.
 
 
   ENDMETHOD.
-
-
 ENDCLASS.

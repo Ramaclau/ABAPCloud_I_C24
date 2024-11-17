@@ -11,7 +11,10 @@ CLASS zcl_cp08_expre_contruc DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_cp08_expre_contruc IMPLEMENTATION.
+
+
+CLASS ZCL_CP08_EXPRE_CONTRUC IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 
@@ -346,5 +349,4 @@ CLASS zcl_cp08_expre_contruc IMPLEMENTATION.
 
 
   ENDMETHOD.
-
 ENDCLASS.
