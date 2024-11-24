@@ -56,8 +56,8 @@ CLASS zcl_lab_02_updatesql_957 IMPLEMENTATION.
 *    ENDIF.
 
     UPDATE zproducts_957
-        SET price  = price + 50
-        WHERE product_id > 1.
+        SET quantity  = quantity + 110
+        WHERE product_id > 11.
 
     IF sy-subrc = 0.
       out->write( |Update rows: { sy-dbcnt }| ).
