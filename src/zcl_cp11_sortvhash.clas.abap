@@ -9,6 +9,7 @@ CLASS zcl_cp11_sortvhash DEFINITION
     METHODS standar.
     METHODS sort.
     METHODS hash.
+
   PROTECTED SECTION.
   PRIVATE SECTION.
 
@@ -24,10 +25,7 @@ CLASS zcl_cp11_sortvhash DEFINITION
 
 ENDCLASS.
 
-
-
 CLASS ZCL_CP11_SORTVHASH IMPLEMENTATION.
-
 
   METHOD constructor.
 
@@ -47,13 +45,11 @@ CLASS ZCL_CP11_SORTVHASH IMPLEMENTATION.
 
   ENDMETHOD.
 
-
   METHOD hash.
     DATA(lv_result) = lt_hash[ travel_id    = me->key_travel_id
                                booking_id   = me->key_booking_id
                                booking_date = me->key_date ].
   ENDMETHOD.
-
 
   METHOD if_oo_adt_classrun~main.
 
@@ -67,10 +63,7 @@ CLASS ZCL_CP11_SORTVHASH IMPLEMENTATION.
     out->write( me->key_booking_id ).
     out->write( me->key_date ).
 
-
-
   ENDMETHOD.
-
 
   METHOD set_line_to_read.
     DATA(lv_data) = lt_standar[ conv i( lines( lt_standar ) * '0.65' ) ].
@@ -79,13 +72,11 @@ CLASS ZCL_CP11_SORTVHASH IMPLEMENTATION.
     me->key_date       = lv_data-booking_date.
   ENDMETHOD.
 
-
   METHOD sort.
     DATA(lv_result) = lt_sort[ travel_id    = me->key_travel_id
                                booking_id   = me->key_booking_id
                                booking_date = me->key_date ].
   ENDMETHOD.
-
 
   METHOD standar.
     DATA(lv_result) = lt_standar[ travel_id    = me->key_travel_id

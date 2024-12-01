@@ -16,10 +16,7 @@ CLASS zcl_cp12_lock_obj DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-
-
 CLASS ZCL_CP12_LOCK_OBJ IMPLEMENTATION.
-
 
   METHOD if_oo_adt_classrun~main.
 

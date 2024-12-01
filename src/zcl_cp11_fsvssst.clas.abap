@@ -4,6 +4,7 @@ CLASS zcl_cp11_fsvssst DEFINITION
   CREATE PUBLIC .
   PUBLIC SECTION.
     INTERFACES if_oo_adt_classrun.
+
     METHODS structure.
     METHODS field_symbol.
   PROTECTED SECTION.
@@ -15,10 +16,7 @@ CLASS zcl_cp11_fsvssst DEFINITION
 
 ENDCLASS.
 
-
-
 CLASS ZCL_CP11_FSVSSST IMPLEMENTATION.
-
 
   METHOD field_symbol.
 
@@ -32,7 +30,6 @@ CLASS ZCL_CP11_FSVSSST IMPLEMENTATION.
 
   ENDMETHOD.
 
-
   METHOD if_oo_adt_classrun~main.
 
     DATA(lo_flights) = NEW zcl_cp11_fsvssst(  ).
@@ -41,11 +38,9 @@ CLASS ZCL_CP11_FSVSSST IMPLEMENTATION.
 
     lo_flights->field_symbol(  ).
 
-    out->get( 'OK' ).
-
+    out->write( 'OK' ).
 
   ENDMETHOD.
-
 
   METHOD loop_fs.
 
@@ -53,7 +48,6 @@ CLASS ZCL_CP11_FSVSSST IMPLEMENTATION.
       <lfs_flights>-country = 'CO'.
     ENDLOOP.
   ENDMETHOD.
-
 
   METHOD loop_st.
 
@@ -63,7 +57,6 @@ CLASS ZCL_CP11_FSVSSST IMPLEMENTATION.
     ENDLOOP.
 
   ENDMETHOD.
-
 
   METHOD structure.
 
