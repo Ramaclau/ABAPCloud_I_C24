@@ -19,9 +19,5 @@ CLASS zcl_cp15_atc_01 IMPLEMENTATION.
         into table @DATA(lt_results).
 
 
-
-
-
-
   ENDMETHOD.
 ENDCLASS.
