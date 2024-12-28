@@ -1,38 +1,13 @@
-CLASS zcl_cp13_sql33 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_CP13_SQL33 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    INTERFACES if_oo_adt_classrun .
-
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
-CLASS zcl_cp13_sql33 IMPLEMENTATION.
-
-  METHOD if_oo_adt_classrun~main.
-
-    select from /dmo/i_flight
-        FIELDS avg( DISTINCT MaximumSeats ) as avgseats,
-               sum( DISTINCT MaximumSeats ) as sumseats
-        where AirlineID = 'AA'
-        into ( @data(lv_avgseats), @data(lv_sumseats) ).
-
-    if sy-subrc = 0.
-        out->write( |Avg Seats: { lv_avgseats }; Sum Seats { lv_sumseats }| ).
-    endif.
-
-   select from /dmo/i_flight
-        FIELDS DISTINCT ConnectionID
-        where AirlineID = 'AA'
-        into  table @data(lv_conn).
-
-    if sy-subrc = 0.
-        out->write( lv_conn ).
-    endif.
 
 
-  ENDMETHOD.
+CLASS ZCL_CP13_SQL33 IMPLEMENTATION.
 ENDCLASS.

@@ -1,29 +1,13 @@
-CLASS zcl_cp13_sql15 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC.
+class ZCL_CP13_SQL15 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    INTERFACES if_oo_adt_classrun.
-
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
-CLASS zcl_cp13_sql15 IMPLEMENTATION.
-
-  METHOD if_oo_adt_classrun~main.
-
-    select single from zcarrier_957
-        FIELDS *
-        where carrier_id = 'AA'
-        into @data(ls_airline).
-
-    if sy-subrc = 0.
-        out->write( ls_airline ).
-    ENDIF.
 
 
-
-  ENDMETHOD.
+CLASS ZCL_CP13_SQL15 IMPLEMENTATION.
 ENDCLASS.

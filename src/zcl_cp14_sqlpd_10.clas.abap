@@ -1,36 +1,13 @@
-CLASS zcl_cp14_sqlpd_10 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_CP14_SQLPD_10 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-
-    INTERFACES if_oo_adt_classrun .
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
-CLASS zcl_cp14_sqlpd_10 IMPLEMENTATION.
-
-  METHOD if_oo_adt_classrun~main.
-
-    CONSTANTS lc_date TYPE d VALUE '00000000'.
-
-    SELECT FROM /dmo/I_flight
-        FIELDS AirlineID AS id,
-               ConnectionID,
-               FlightDate
-    UNION DISTINCT "ALL
-    SELECT FROM /DMO/I_Connection
-        FIELDS airlineid AS id,
-               ConnectionID,
-               @lc_date AS FlightDate
-        INTO TABLE @DATA(lt_union).
-
-    IF sy-subrc EQ 0.
-      out->write( lt_union ).
-    ENDIF.
 
 
-  ENDMETHOD.
+CLASS ZCL_CP14_SQLPD_10 IMPLEMENTATION.
 ENDCLASS.

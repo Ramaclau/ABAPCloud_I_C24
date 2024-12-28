@@ -1,31 +1,13 @@
-CLASS zcl_cp13_sql47 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC.
-  PUBLIC SECTION.
-    INTERFACES if_oo_adt_classrun.
+class ZCL_CP13_SQL47 definition
+  public
+  create private .
 
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
-CLASS zcl_cp13_sql47 IMPLEMENTATION.
 
-  METHOD if_oo_adt_classrun~main.
 
-    SELECT FROM /dmo/I_Flight AS flights
-        FIELDS *
-        WHERE OccupiedSeats < flights~MaximumSeats
-          AND EXISTS ( SELECT FROM zcarrier_957
-                            FIELDS carrier_id
-                            WHERE carrier_id = flights~AirlineID )
-        INTO TABLE @DATA(lt_flights).
-
-    IF sy-subrc = 0.
-      out->write( lt_flights ).
-    ELSE.
-      out->write( 'No data' ).
-    ENDIF.
-
-  ENDMETHOD.
+CLASS ZCL_CP13_SQL47 IMPLEMENTATION.
 ENDCLASS.

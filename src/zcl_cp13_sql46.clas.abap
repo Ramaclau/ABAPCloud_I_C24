@@ -1,39 +1,13 @@
-CLASS zcl_cp13_sql46 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC.
-  PUBLIC SECTION.
-    INTERFACES if_oo_adt_classrun.
+class ZCL_CP13_SQL46 definition
+  public
+  create private .
 
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
-CLASS zcl_cp13_sql46 IMPLEMENTATION.
 
-  METHOD if_oo_adt_classrun~main.
 
-    SELECT FROM /dmo/I_Connection AS Connection
-        FIELDS *
-        WHERE AirlineID = ANY ( SELECT FROM /dmo/I_Flight
-                                       FIELDS AirlineID
-                                       WHERE OccupiedSeats >= 100 )
-        INTO TABLE @DATA(lt_flights_any).
-
-    IF sy-subrc = 0.
-      out->write( |Any: { lines( lt_flights_any ) }| ).
-    ENDIF.
-
-    SELECT FROM /dmo/I_Connection AS Connection
-        FIELDS *
-        WHERE AirlineID = SOME ( SELECT FROM /dmo/I_Flight
-                                       FIELDS AirlineID
-                                       WHERE OccupiedSeats >= 100 )
-        INTO TABLE @DATA(lt_flights_some).
-
-    IF sy-subrc = 0.
-      out->write( |Some: { lines( lt_flights_some ) }| ).
-    ENDIF.
-
-  ENDMETHOD.
+CLASS ZCL_CP13_SQL46 IMPLEMENTATION.
 ENDCLASS.

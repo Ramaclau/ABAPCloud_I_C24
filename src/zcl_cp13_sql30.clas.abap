@@ -1,33 +1,13 @@
-CLASS zcl_cp13_sql30 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_CP13_SQL30 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    INTERFACES if_oo_adt_classrun .
-
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
-CLASS zcl_cp13_sql30 IMPLEMENTATION.
 
-  METHOD if_oo_adt_classrun~main.
 
-    SELECT from /dmo/i_connection
-        FIELDS *
-        where ( AirlineID = 'AA'
-             or AirlineID = 'LH' )
-          and ( DepartureAirport = 'SFO'
-             or DepartureAirport = 'JFK' )
-          and not connectionid = '0015'
-        into table @data(lt_flights).
-
-    if sy-subrc = 0.
-        out->write( lt_flights ).
-    else.
-        out->write( |No data| ).
-    endif.
-
-  ENDMETHOD.
+CLASS ZCL_CP13_SQL30 IMPLEMENTATION.
 ENDCLASS.

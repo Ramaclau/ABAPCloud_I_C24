@@ -4,20 +4,18 @@ CLASS zcl_cp00 DEFINITION
   CREATE PUBLIC .
 
   PUBLIC SECTION.
-  INTERFACES if_oo_adt_classrun.
+    INTERFACES if_oo_adt_classrun.
 
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
 
+CLASS zcl_cp00 IMPLEMENTATION.
 
+  METHOD if_oo_adt_classrun~main.
 
-CLASS ZCL_CP00 IMPLEMENTATION.
+    out->write( 'esta es una clase' ).
+    out->write( 'esta es una clase de prueba repositorio GIT' ).
 
-
-METHOD if_oo_adt_classrun~main.
-
-out->write( 'esta es una clase' ).
-
-ENDMETHOD.
+  ENDMETHOD.
 ENDCLASS.

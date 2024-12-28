@@ -1,23 +1,13 @@
-CLASS zcl_cp15_atc_01 DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_CP15_ATC_01 definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-
-    INTERFACES if_oo_adt_classrun .
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
-CLASS zcl_cp15_atc_01 IMPLEMENTATION.
-
-  METHOD if_oo_adt_classrun~main.
-
-    select from /DMO/I_Connection
-        FIELDS *
-        into table @DATA(lt_results).
 
 
-  ENDMETHOD.
+CLASS ZCL_CP15_ATC_01 IMPLEMENTATION.
 ENDCLASS.
