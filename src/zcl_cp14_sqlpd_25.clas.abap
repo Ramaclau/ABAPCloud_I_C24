@@ -1,13 +1,33 @@
-class ZCL_CP14_SQLPD_25 definition
-  public
-  create private .
+CLASS zcl_cp14_sqlpd_25 DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
 
-public section.
-protected section.
-private section.
+  PUBLIC SECTION.
+
+    INTERFACES if_oo_adt_classrun .
+  PROTECTED SECTION.
+  PRIVATE SECTION.
 ENDCLASS.
 
+CLASS zcl_cp14_sqlpd_25 IMPLEMENTATION.
 
+  METHOD if_oo_adt_classrun~main.
 
-CLASS ZCL_CP14_SQLPD_25 IMPLEMENTATION.
+    INSERT zflights_957_c FROM ( SELECT FROM /DMO/I_Flight
+                                             FIELDS uuid(  ) AS flight_uuid,
+                                                    airlineid,
+                                                    ConnectionID,
+                                                    FlightDate,
+                                                    \_Connection-DepartureAirport,
+                                                    \_Connection-DestinationAirport ).
+    SELECT FROM zflights_957_c
+        FIELDS *
+        INTO TABLE @DATA(lt_flights).
+
+    IF sy-subrc EQ 0.
+      out->write( lt_flights ).
+    ENDIF.
+
+  ENDMETHOD.
 ENDCLASS.

@@ -22,7 +22,6 @@ define view entity zcds_02_param_957
   PlaneType,
   MaximumSeats,
   OccupiedSeats,
-  ZZTest,
   /* Associations */
   _Airline,
   _Connection,
